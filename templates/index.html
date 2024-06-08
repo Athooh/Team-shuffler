@@ -10,7 +10,19 @@
     <script defer type="text/javascript" src="static/script.js"></script>
 </head>
 <body>
-    <h1>Team Shuffler</h1>
+    <div class="overlay"></div>
+    <h1>Fussball Team Shuffler</h1>
+
+    
+        <form id="register-form">
+            <select name="role">
+                <option value="Striker" selected>Striker</option>
+                <option value="Defender">Defender</option>
+            </select>
+            <input type="text" id="name" name="name">
+            <button onclick="reloadPage()"  hx-post="/register" hx-target="#players-table tbody" hx-swap="afterend" _="on htmx:afterSwap htmx-logger">Add New Player</button>
+        </form>
+    
 
     <table id="players-table">
         <thead>
@@ -24,7 +36,12 @@
         </tbody>
     </table>
 
-    <button id="shuffle-button">Shuffle Teams</button>
+    <div class="fixture-buttons">
+        <button id="shuffle-button">Shuffle Teams</button>
+    <button id="show-fixtures-button">Show Fixtures</button>
+    <button onclick="hideFixtures()">Hide Fixtures</button>
+    </div>
+    
     <div id="shuffled-teams-container" class="hidden">
         <h2>Shuffled Teams</h2>
         <table id="shuffled-teams-table">
@@ -41,18 +58,9 @@
         </table>
     </div>
     
-    <div>
-        <form id="register-form">
-            <select name="role">
-                <option value="Striker" selected>Striker</option>
-                <option value="Defender">Defender</option>
-            </select>
-            <input type="text" id="name" name="name">
-            <button onclick="reloadPage()"  hx-post="/register" hx-target="#players-table tbody" hx-swap="afterend" _="on htmx:afterSwap htmx-logger">Add New Player</button>
-        </form>
-    </div>
+   
 
-    <button id="show-fixtures-button">Show Fixtures</button>
+   
     <div id="fixtures-container" class="hidden">
         <h2>Fixtures</h2>
         <table id="fixtures-table">
@@ -66,7 +74,7 @@
                 <!-- Fixture rows will be inserted here -->
             </tbody>
         </table>
-        <button onclick="hideFixtures()">Hide Fixtures</button>
+        
     </div>
 </body>
 </html>
