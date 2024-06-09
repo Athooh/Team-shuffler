@@ -33,7 +33,7 @@ h1 {
 
 table {
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
     max-width: 1200px;
     margin-bottom: 20px;
     box-shadow: 1px solid #fff;
@@ -47,7 +47,7 @@ table {
 }
 
 #fixtures-table {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -113,7 +113,7 @@ button:hover {
 }
 
 #shuffled-teams-table {
-    max-width: 800px;
+    width: 100%;
 }
 
 .hidden {
