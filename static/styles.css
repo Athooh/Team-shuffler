@@ -42,12 +42,13 @@ table {
 }
 
 #fixtures-container {
-    width: 1200px;
+    max-width: 1200px;
     z-index: 1;
 }
 
 #fixtures-table {
-    width: 1200px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #register-form {
